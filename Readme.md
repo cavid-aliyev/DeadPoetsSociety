@@ -13,7 +13,9 @@ return the result as a ready-made text (see example). Each group is displayed in
 as follows:
 
 Role:
+
 i) text
+
 j) text2
 ...
 
