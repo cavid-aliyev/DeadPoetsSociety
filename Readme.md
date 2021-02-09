@@ -16,6 +16,7 @@ Role:
 i) text
 j) text2
 ...
+
 == line feed ==
 
 i and j are the line numbers in the script. Line indexing starts at one, display groups
