@@ -1,9 +1,10 @@
 //roles = ${massive}
 //poems = ${string}
 
+//Our roles from poem
 let roles = ["Городничий", "Аммос Федорович", "Артемий Филиппович", "Лука Лукич"];
 
-
+//CHapter 1 from N.V. Gogol. Auditor
 let poems = `Городничий. Я пригласил вас, господа, с тем чтобы сообщить вам пренеприятное известие: к нам едет ревизор.
 Аммос Федорович. Как ревизор?
 Артемий Филиппович. Как ревизор?
@@ -42,18 +43,24 @@ let poems = `Городничий. Я пригласил вас, господа,
 Лука Лукич. Не приведи Бог служить по ученой части! Всего боишься: всякий мешается, всякому хочется показать, что он тоже умный человек.
 Городничий. Это бы еще ничего, — инкогнито проклятое! Вдруг заглянет: «А, вы здесь, голубчики! А кто, скажет, здесь судья?» — «Ляпкин-Тяпкин». — «А подать сюда Ляпкина-Тяпкина! А кто попечитель богоугодных заведений?» — «Земляника». — «А подать сюда Землянику!» Вот что худо!`;
 
-
+//split our poems to massive for best sorting.
 const phrases = poems.split('\n');
 
+//our finally result should be here
 let result = '';
 
+
 roles.forEach(role=>{
+    //role must be top and bottom spacing 
     let temp = `\n${role}: \n`;
 
-
+    //looping phrases for finding whitch role has said same phrases
     phrases.forEach((line, j)=>{
+        //we cant use includes because in the any role's phrases can includes another role's name
         if (line.indexOf(role) >=0 && line.indexOf(role) < role.length){
             const content = line.slice(role.length + 1);
+
+            //final constructor
             temp += `${j + 1}) ${content}\n`;
         }
     });
